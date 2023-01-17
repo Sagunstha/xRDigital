@@ -1,0 +1,25 @@
+.example-col.formdiv {
+  margin-top: 4rem;
+}
+.k-form fieldset legend,
+.k-form-inline fieldset legend.formlabel {
+  font-weight: 500;
+}
+.k-input-solid.k-invalid,
+.k-input-solid.ng-invalid.ng-touched,
+.k-input-solid.ng-invalid.ng-dirty .inputs {
+  padding: 0.7rem;
+}
+.k-form .k-label,
+.k-form kendo-label,
+.k-form .k-form-label {
+  padding: 0.2rem;
+}
+input.k-input,
+textarea.k-textarea .label {
+  padding: 14px 8px;
+}
+.custom-input {
+  border: 1px solid black !important;
+  padding: 10px;
+}
