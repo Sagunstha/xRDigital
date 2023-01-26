@@ -1,0 +1,7 @@
+.form {
+    background: whitesmoke;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem 1re rgb(0, 0, 0, 0.1) !important;
+    border: 2px solid white;
+}
