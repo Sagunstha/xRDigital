@@ -1,18 +1,18 @@
 import { Button } from '@progress/kendo-react-buttons';
 import { Field, Form, FormElement } from '@progress/kendo-react-form';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 interface FormProps {
     fields: Array<any>;
     title: string;
     buttonLabel: string;
     handleSubmit: (dataItem: submitProps) => any;
+    disabled?: boolean;
 }
 export interface submitProps {
     dataItem: Array<any>;
 }
-const Kendoform = ({ title, fields, buttonLabel, handleSubmit }: FormProps) => {
+const Kendoform = ({ title, fields, buttonLabel, handleSubmit, disabled }: FormProps) => {
     return (
         <div className="form">
             <Form
@@ -20,7 +20,6 @@ const Kendoform = ({ title, fields, buttonLabel, handleSubmit }: FormProps) => {
                 render={() => (
                     <FormElement
                         style={{
-                            width: '35%',
                             minWidth: 400,
                         }}
                     >
@@ -36,6 +35,7 @@ const Kendoform = ({ title, fields, buttonLabel, handleSubmit }: FormProps) => {
                                         component={field.component}
                                         required={field.required}
                                         validator={field.validator}
+                                        disabled={disabled}
                                     />
                                 </div>
                             ))}
@@ -43,14 +43,14 @@ const Kendoform = ({ title, fields, buttonLabel, handleSubmit }: FormProps) => {
                         <div className="k-form-buttons">
                             <Button
                                 type={'submit'}
-                                themeColor="info"
+                                themeColor={disabled ? 'secondary' : 'primary'}
                                 size="large"
                                 className="buttons-container-button"
                                 icon="refresh"
                             >
                                 {buttonLabel}
                             </Button>
-                            {title === 'Log In' ? (
+                            {/* {title === 'Log In' ? (
                                 <div className="form-buttons">
                                     Do not have an account?
                                     <Link to="/signup" style={{ textDecoration: 'none', color: 'black' }}>
@@ -64,7 +64,7 @@ const Kendoform = ({ title, fields, buttonLabel, handleSubmit }: FormProps) => {
                                         Log In
                                     </Link>
                                 </div>
-                            )}
+                            )} */}
                         </div>
                     </FormElement>
                 )}

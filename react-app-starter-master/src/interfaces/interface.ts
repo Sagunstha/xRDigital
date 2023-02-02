@@ -7,4 +7,5 @@ export interface FormFieldProps {
     validator?: any;
     matchWith?: any;
     addon?: JSX.Element;
+    disabled?: boolean;
 }
